@@ -3,12 +3,16 @@ class StorefrontController < ApplicationController
   	@products = Product.all
   end
 
-  def items_by
+  def items_by_category
+  	@category = Category.find(params[:id])
+  	@products = @category.products
   end
 
   def category
   end
 
-  def items_by_price
+  def items_by_tag
+    @products = Product.where(tag: params[:tag])
+    @tag = params[:tag]
   end
 end

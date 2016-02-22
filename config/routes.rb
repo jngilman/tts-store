@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'storefront/all_items'
 
-  get 'storefront/items_by'
+  get 'storefront/items_by_category'
 
   get 'storefront/category'
 
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   root 'storefront#all_items'
 
-  get 'price' => 'storefront#items_by_price'
+  get 'tag' => 'storefront#items_by_tag'
 
   get 'category' => 'storefront#items_by_category'
 
