@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'admin' => 'admin#power'
+
+  devise_for :users
   get 'storefront/all_items'
 
   get 'storefront/items_by'
