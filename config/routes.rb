@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   get 'category' => 'storefront#items_by_category'
 
+  get 'hog' => 'admin#hog_power'
+  get 'share' => 'admin#give_power'
+
   resources :categories
   resources :products
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,2 +1,12 @@
-<h1>Admin#power</h1>
-<p>Find me in app/views/admin/power.html.erb</p>
+<% if current_user.try(:admin?) %>
+<% @users.each do |user| %>
+<%= user.email %> |
+<% if user.admin == true %>
+<%= link_to "steel the power", hog_path(id: user.id) %> <br>
+<% else %>
+<%= link_to "Make Admin", share_path(id: user.id) %> <br>
+<% end %>
+<% end %>
+<% else %>
+<h2>You do not have the power - of the admin</h2>
+<% end %>
