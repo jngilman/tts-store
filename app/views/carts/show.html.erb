@@ -5,7 +5,7 @@
 		<tr>
 			<th>Product</th>
 			<th>Quantiy</th>
-			<th>Total Price</th>
+			<th>Sub-Total Price</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -19,6 +19,6 @@
 	</tbody>
 
 </table>
-
+<h5> Order Sub-Total <%= @cart.subtotal %></h5>
 <%= link_to "Continue Shopping", root_path, class: "btn btn-success" %>
 <%= button_to "Empty Cart", @cart, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
